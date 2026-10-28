@@ -1,0 +1,12 @@
+{
+  "name": "mauli-mandap-app",
+  "private": true,
+  "workspaces": ["frontend"],
+  "scripts": {
+    "start": "npm --workspace frontend run start",
+    "android": "npm --workspace frontend run android",
+    "ios": "npm --workspace frontend run ios",
+    "web": "npm --workspace frontend run web",
+    "lint": "npm --workspace frontend run lint"
+  }
+}

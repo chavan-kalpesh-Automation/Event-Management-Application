@@ -1,0 +1,182 @@
+{
+  "app_name": "Mauli Events",
+  "personality": "Fusion of 1 (iOS-Native Clean) structure with 3 (Editorial Mobile) typography and color",
+  "personality_one_liner": "A premium, warm, and tastefully refined internal productivity tool that echoes Indian wedding traditions without sacrificing operational clarity.",
+  "color": {
+    "surface": "#FDFBF7",
+    "onSurface": "#2B1D19",
+    "surfaceSecondary": "#FFFFFF",
+    "onSurfaceSecondary": "#2B1D19",
+    "surfaceTertiary": "#F5EBE1",
+    "onSurfaceTertiary": "#4A362E",
+    "surfaceInverse": "#2B1D19",
+    "onSurfaceInverse": "#FDFBF7",
+    "brand": "#7A2A22",
+    "onBrand": "#FFFFFF",
+    "brandPrimary": "#7A2A22",
+    "onBrandPrimary": "#FFFFFF",
+    "brandSecondary": "#D89B27",
+    "onBrandSecondary": "#2B1D19",
+    "brandTertiary": "#F3DCA8",
+    "onBrandTertiary": "#5C3E08",
+    "success": "#3E6641",
+    "onSuccess": "#FFFFFF",
+    "warning": "#D89B27",
+    "onWarning": "#2B1D19",
+    "error": "#B33939",
+    "onError": "#FFFFFF",
+    "info": "#665345",
+    "onInfo": "#FFFFFF",
+    "border": "#EBE1D7",
+    "borderStrong": "#D6C3B3",
+    "muted": "#8C7D76"
+  },
+  "typography": {
+    "displayFontFamily": "Playfair Display",
+    "textFontFamily": "Plus Jakarta Sans",
+    "scale": {
+      "sm": 12,
+      "base": 14,
+      "lg": 16,
+      "xl": 20,
+      "2xl": 24
+    }
+  },
+  "spacing": {
+    "rule": "Generous vertical breathing room for editorial feel but clean iOS structural alignment for inputs and lists.",
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 24,
+    "2xl": 32,
+    "3xl": 48
+  },
+  "radius_tokens": {
+    "sm": 6,
+    "md": 12,
+    "lg": 20,
+    "pill": 999
+  },
+  "shadow_tier": 1,
+  "navigation": "bottom_tabs",
+  "icon_set": "Feather",
+  "glassmorphism": {
+    "enabled": true,
+    "do's": [
+      "Use on bottom tab bar, sticky headers over scrolling content, floating action buttons.",
+      "Featured/Hero event cards with translucent text overlay (ensure gradient scrim is used)."
+    ],
+    "dont's": [
+      "Do not use on input fields, normal list items, or regular cards."
+    ]
+  },
+  "platform_libraries": {
+    "glass": {
+      "ios": "expo-glass-effect",
+      "android": "expo-blur",
+      "low_end_android_fallback": "solid surfaceSecondary"
+    },
+    "image": "expo-image",
+    "blur": "expo-blur",
+    "bottom_sheet": "@gorhom/bottom-sheet",
+    "animation": "react-native-reanimated",
+    "gesture": "react-native-gesture-handler"
+  },
+  "screens": [
+    {
+      "name": "Login",
+      "purpose": "Staff-only secure login with a premium, traditional aesthetic background.",
+      "states": {
+        "loading": "Subtle marigold-colored spinner.",
+        "empty": "N/A",
+        "error": "Bottom sheet or toast showing authentication error."
+      },
+      "layout": "Full-bleed background image with a vertical gradient scrim (transparent to surfaceInverse). A glassmorphic bottom sheet containing the phone/OTP or email/password inputs, and a sticky Login button. Typography uses Playfair Display for 'Mauli Events'."
+    },
+    {
+      "name": "Dashboard",
+      "purpose": "At-a-glance view of Today's Events, Quick Stats, and recent notifications.",
+      "states": {
+        "loading": "Skeleton cards for today's events.",
+        "empty": "Illustration of an elegant mandap with 'No events today' text.",
+        "error": "Error banner under header with retry button."
+      },
+      "layout": "iOS-Native layout: Large Playfair Display header 'Today'. Top section: Horizontal scroll of Quick Stats cards (Revenue, Enquiries, Pending Payments). Middle section: Vertical list of Today's Event cards. Event cards feature a subtle brandTertiary tint or a background image of the venue type with a bottom scrim."
+    },
+    {
+      "name": "Calendar",
+      "purpose": "Monthly/Weekly/Daily views of confirmed bookings and tentative enquiries.",
+      "states": {
+        "loading": "Skeleton grid.",
+        "empty": "Empty state illustration with 'No bookings on this date'.",
+        "error": "Error message with retry button."
+      },
+      "layout": "Sticky month/week toggle header. A scrollable calendar grid. Selecting a date opens a bottom sheet with a detailed list of events, status chips (e.g., Confirmed, Blocked, Tentative), assigned resources, and event times."
+    },
+    {
+      "name": "CustomerManagement",
+      "purpose": "List of contacts, with detail views holding history, quotations, and bills.",
+      "states": {
+        "loading": "Skeleton list rows.",
+        "empty": "Empty state illustration with 'Add your first customer'.",
+        "error": "Retry button."
+      },
+      "layout": "Search bar with a sticky header. Alphabetically sectioned lists. Clicking a customer opens a detail page (using Playfair Display for the name, Plus Jakarta Sans for details) with tabs for 'Details', 'Bookings', and 'Invoices'. Floating Action Button (glassmorphic) to 'Add Customer'."
+    },
+    {
+      "name": "QuotationsAndInvoices",
+      "purpose": "Generate and manage quotations, track payments, and share via WhatsApp.",
+      "states": {
+        "loading": "Spinner centered.",
+        "empty": "Empty state 'No invoices generated yet'.",
+        "error": "Retry button."
+      },
+      "layout": "Segmented control (Quotations / Invoices). Kanban or list-style tracking for Pending vs Paid. Detail view includes a prominent 'Share on WhatsApp' button (wa.me link generation) anchored at the bottom using safe-area padding."
+    },
+    {
+      "name": "InventoryAndChecklists",
+      "purpose": "Track decoration, food raw materials, catering recipes, and worker event checklists.",
+      "states": {
+        "loading": "Skeleton list.",
+        "empty": "Empty checklist or inventory message.",
+        "error": "Retry button."
+      },
+      "layout": "Two-column grid for inventory categories (Decoration, Food). Clicking into a category shows a clean iOS-style list of items with stock levels. Checklists use large tap targets for checkboxes (44x44pt) with a strikethrough effect upon completion."
+    }
+  ],
+  "images": {
+    "login_background": {
+      "url": "https://images.unsplash.com/photo-1705475388142-a2700c4caeb5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzl8MHwxfHNlYXJjaHwyfHxtYXJpZ29sZCUyMGZsb3dlciUyMGRlY29yYXRpb24lMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc5MjQ5Mzk3MHww&ixlib=rb-4.1.0&q=85",
+      "alt": "Marigold flower decoration background representing warmth and Indian wedding traditions"
+    },
+    "empty_state_decor": {
+      "url": "https://images.pexels.com/photos/17315439/pexels-photo-17315439.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Elegant wedding decor featuring a lavish floral arrangement"
+    },
+    "default_venue": {
+      "url": "https://images.pexels.com/photos/38380943/pexels-photo-38380943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Elegant corridor with chandeliers and floral arrangements"
+    }
+  },
+  "haptics": {
+    "events": {
+      "login_success": "notification_success",
+      "tab_press": "selection",
+      "button_press": "light",
+      "checklist_toggle": "medium",
+      "whatsapp_share": "heavy"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Ensure Playfair Display is used only for major headings and large typography, capped at 500 weight. Use Plus Jakarta Sans for all body text, lists, inputs, and functional UI.",
+    "Implement the gradient scrim pattern (transparent to >=70% surfaceInverse) on the Login background and any Event image cards to ensure text contrast.",
+    "Do not use any blue, indigo, or purple colors. Rely on the maroon (brand) and marigold (brandSecondary) palette. Do not use random hex codes.",
+    "For WhatsApp sharing, use wa.me links explicitly generated with prefilled text (e.g. wa.me/919999999999?text=Hello...). Keep the Share button sticky at the bottom of the Invoice/Quotation detail screens.",
+    "Always maintain a minimum touch target size of 44x44pt for list items, checkboxes, and buttons.",
+    "Apply glassmorphism (via expo-blur or expo-glass-effect) on the bottom tab bar and sticky headers to give a premium feel over scrolling content.",
+    "Keep forms strict to single-column, labels above inputs. No floating labels.",
+    "Role-based UI: Owner sees Revenue/Profit stats, Worker sees assigned Checklists/Events. Filter visibility based on role.",
+    "For the calendar grid, avoid overwhelming dot-markers. Use color-coded chips or indicators (Maroon for Blocked/Confirmed, Marigold for Tentative) and show the detailed list in a bottom sheet when a date is selected."
+  ]
+}
